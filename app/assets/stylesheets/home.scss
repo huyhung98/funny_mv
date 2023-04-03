@@ -64,7 +64,7 @@ body {
   float: right;
 }
 
-.top-nav input[type=text] {
+.top-nav input[type=text], .top-nav input[type=password] {
   padding: 6px;
   margin-top: 8px;
   font-size: 17px;
@@ -72,7 +72,7 @@ body {
   width:120px;
 }
 
-.top-nav .login-container button {
+.top-nav .login-container button, .login-button {
   float: right;
   padding: 6px 10px;
   margin-top: 8px;
@@ -86,6 +86,12 @@ body {
 
 .top-nav .login-container button:hover {
   background-color: green;
+}
+
+.error-messages {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
 }
 
 @media screen and (max-width: 800px) {
