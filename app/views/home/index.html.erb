@@ -1,42 +1,5 @@
-<div class="top-nav">
-  <a class="active" href="#home">Funny Movie</a>
-  <div class="logout-container">
-    <% if logged_in? %>
-      <div style="padding: 5px 15px">Welcome, <%= current_user.email %></div>
-      <div>
-        <%= button_to('Logout', '/destroy',
-                      method: "delete", data: { confirm: 'Are you sure?' }, class: "logout-button") %>
-      </div>
-    <% else %>
-      <%= form_for :session, url: login_path, method: :post do |f| %>
-        <%= f.text_field :email, placeholder: "Email" %>
-        <%= f.password_field :password, placeholder: "Password", class: "password-input" %>
-        <%= f.submit "Login/Register", class: "login-button" %>
-      <% end %>
-      <% flash.each do |type, msg| %>
-        <div class="error-messages">
-          <%= msg %>
-        </div>
-      <% end %>
-    <%end%>
-  </div>
-</div>
-
 <div class="row">
   <div class="left-column"  style="padding: 0 500px">
-    <div class="card">
-      <div>
-        <h2>TITLE HEADING</h2>
-        <h5>Title description, Dec 7, 2017</h5>
-        <div class="fake-img" style="height:200px;">Image</div>
-        <p>Some text..</p>
-      </div>
-    </div>
-    <div class="card">
-      <h2>TITLE HEADING</h2>
-      <h5>Title description, Sep 2, 2017</h5>
-      <div class="fake-img" style="height:200px;">Image</div>
-      <p>Some text..</p>
-    </div>
+    <%= render partial: "post", collection: @posts %>
   </div>
 </div>

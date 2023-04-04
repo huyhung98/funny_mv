@@ -4,4 +4,8 @@ class Post < ApplicationRecord
   URL_REGEX = /\A(https?:\/\/)?((www\.)?youtube\.com|youtu\.be)\/.+\z/i.freeze
   validates :title, presence: :true, length: { minimum: 6, maximum: 50 }
   validates :content, presence: :true, format: { with: URL_REGEX }
+
+  def short_date
+    created_at.to_formatted_s(:short)
+  end
 end

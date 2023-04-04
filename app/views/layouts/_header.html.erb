@@ -1,0 +1,23 @@
+<div class="top-nav">
+  <a class="active" href="#home">Funny Movie</a>
+  <div class="logout-container">
+    <% if logged_in? %>
+      <div style="padding: 5px 15px">Welcome, <%= current_user.email %></div>
+      <div>
+        <%= button_to('Logout', '/destroy',
+                      method: "delete", data: { confirm: 'Are you sure?' }, class: "logout-button") %>
+      </div>
+    <% else %>
+      <%= form_for :session, url: login_path, method: :post do |f| %>
+        <%= f.text_field :email, placeholder: "Email" %>
+        <%= f.password_field :password, placeholder: "Password", class: "password-input" %>
+        <%= f.submit "Login/Register", class: "login-button" %>
+      <% end %>
+      <% flash.each do |type, msg| %>
+        <div class="error-messages">
+          <%= msg %>
+        </div>
+      <% end %>
+    <%end%>
+  </div>
+</div>
