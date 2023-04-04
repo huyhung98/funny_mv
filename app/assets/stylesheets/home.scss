@@ -60,6 +60,22 @@ body {
   color: white;
 }
 
+.logout-container {
+  display: flex;
+  float: right;
+}
+
+.logout-button {
+  float: right;
+  margin-right: 16px;
+  padding: 5px 15px;
+  background-color: #555;
+  color: white;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
 .top-nav .login-container {
   float: right;
 }

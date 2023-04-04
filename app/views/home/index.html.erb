@@ -1,8 +1,12 @@
 <div class="top-nav">
   <a class="active" href="#home">Funny Movie</a>
-  <div class="login-container">
+  <div class="logout-container">
     <% if logged_in? %>
-      <span style="padding: 5px 15px">Welcome, <%= current_user.email %></span>
+      <div style="padding: 5px 15px">Welcome, <%= current_user.email %></div>
+      <div>
+        <%= button_to('Logout', '/destroy',
+                      method: "delete", data: { confirm: 'Are you sure?' }, class: "logout-button") %>
+      </div>
     <% else %>
       <%= form_for :session, url: login_path, method: :post do |f| %>
         <%= f.text_field :email, placeholder: "Email" %>
