@@ -7,6 +7,6 @@ module HomeHelper
       youtube_id = $5
     end
   
-    %Q{<iframe title="YouTube video player" src="http://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen></iframe>}
+    %Q{<iframe title="YouTube video player" src="https://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen class="youtube-frame"></iframe>}
   end
 end

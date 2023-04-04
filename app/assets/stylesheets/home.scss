@@ -17,12 +17,6 @@ body {
   width: 60%;
 }
 
-.fake-img {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
-
 .card {
   max-width: 800px;
   background-color: white;
@@ -30,8 +24,9 @@ body {
   margin-top: 20px;
 }
 
-@media screen and (max-width: 800px) {
-
+.youtube-frame {
+  min-height: 350px;
+  min-width: 550px;
 }
 
 .top-nav {
