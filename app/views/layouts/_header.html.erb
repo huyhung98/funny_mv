@@ -1,8 +1,11 @@
 <div class="top-nav">
-  <a class="active" href="#home">Funny Movie</a>
+  <a class="active" href="/">Funny Movie</a>
   <div class="logout-container">
     <% if logged_in? %>
       <div style="padding: 5px 15px">Welcome, <%= current_user.email %></div>
+      <div>
+        <%= button_to 'Create Post', new_post_url, method: :get,  class: "logout-button" %>
+      </div>
       <div>
         <%= button_to('Logout', '/destroy',
                       method: "delete", data: { confirm: 'Are you sure?' }, class: "logout-button") %>

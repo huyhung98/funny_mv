@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :users
-  get '/', to: 'home#index'
+  root to: 'home#index'
+  resources :posts, only: [:new, :create]
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/destroy', to: 'sessions#destroy'

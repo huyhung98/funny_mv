@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  before_action :authorized
+  skip_before_action :authorized
   
   def index
     @posts = Post.last(10)

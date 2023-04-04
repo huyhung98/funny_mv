@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="post-new">
+    <fieldset style="text-align: center">
+      <legend>Post Create:</legend>
+        <%= form_for @post do |f| %>
+          <%= f.text_field :content, placeholder: "Enter Youtube URL here!" %>
+          <%= f.submit "Create", { id: "post_submit" } %>
+        <% end %>
+    </fieldset>
+  </div>
+</div>
