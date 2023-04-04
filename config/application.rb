@@ -10,6 +10,7 @@ module FunnyMv
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    VideoInfo.provider_api_keys = { youtube: ENV['YOUTUBE_API'] }
 
     # Configuration for the application, engines, and railties goes here.
     #
