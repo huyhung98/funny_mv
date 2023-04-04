@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   root to: 'home#index'
-  resources :posts, only: [:new, :create]
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  delete '/destroy', to: 'sessions#destroy'
+  resources :posts, only: %i[new create]
+  resources :sessions, only: %i[new create destroy]
 end

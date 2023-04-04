@@ -4,14 +4,14 @@
     <% if logged_in? %>
       <div style="padding: 5px 15px">Welcome, <%= current_user.email %></div>
       <div>
-        <%= button_to 'Create Post', new_post_url, method: :get,  class: "logout-button" %>
+        <%= button_to 'Create Post', new_post_path, method: :get,  class: "logout-button" %>
       </div>
       <div>
-        <%= button_to('Logout', '/destroy',
+        <%= button_to('Logout', sessions_path,
                       method: "delete", data: { confirm: 'Are you sure?' }, class: "logout-button") %>
       </div>
     <% else %>
-      <%= form_for :session, url: login_path, method: :post do |f| %>
+      <%= form_for :session, url: sessions_path, method: :post do |f| %>
         <%= f.text_field :email, placeholder: "Email" %>
         <%= f.password_field :password, placeholder: "Password", class: "password-input" %>
         <%= f.submit "Login/Register", class: "login-button" %>
