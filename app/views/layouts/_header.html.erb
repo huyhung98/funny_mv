@@ -7,8 +7,8 @@
         <%= button_to 'Create Post', new_post_path, method: :get,  class: "logout-button" %>
       </div>
       <div>
-        <%= button_to('Logout', sessions_path,
-                      method: "delete", data: { confirm: 'Are you sure?' }, class: "logout-button") %>
+        <%= button_to 'Logout', session_path(id: current_user.id),
+              method: "delete", data: { confirm: 'Are you sure?' }, class: "logout-button" %>
       </div>
     <% else %>
       <%= form_for :session, url: sessions_path, method: :post do |f| %>

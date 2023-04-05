@@ -9,4 +9,16 @@ module HomeHelper
   
     %Q{<iframe title="YouTube video player" src="https://www.youtube.com/embed/#{ youtube_id }" frameborder="0" allowfullscreen class="youtube-frame"></iframe>}
   end
+
+  def short_description(description)
+    description&.truncate(250)
+  end
+
+  def short_title(title)
+    title&.truncate(250)
+  end
+
+  def short_date(date)
+    date.to_formatted_s(:short)
+  end
 end
