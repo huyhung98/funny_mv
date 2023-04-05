@@ -1,6 +1,6 @@
 <div class="card">
   <h2><%= short_title(post.title) %></h2>
-  <h5>Posted at <%= post.short_date %> by <%= post.user.email %></h5>
+  <h5>Posted at <%= short_date(post.created_at) %> by <%= post.user.email %></h5>
   <%= youtube_embed(post.content).html_safe %>
   <p><%= short_description(post.description) %></p>
 </div>

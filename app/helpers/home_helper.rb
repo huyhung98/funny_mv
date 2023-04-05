@@ -17,4 +17,8 @@ module HomeHelper
   def short_title(title)
     title&.truncate(250)
   end
+
+  def short_date(date)
+    date.to_formatted_s(:short)
+  end
 end
